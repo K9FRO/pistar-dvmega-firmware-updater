@@ -68,7 +68,8 @@ sudo ./flash_dvmega_gpio516.sh DVMEGA_RH_V###_UNO.hex
 ```
 ### 11. When the script is finished you should see:
 ```
-Flash and verification completed successfully. Reboot Pi-Star before returning to normal operation.
+Firmware flash and explicit verification completed successfully.
+Reboot Pi-Star before returning to normal operation.
 ```
 ### 12. Reboot the PiStar Machine
 ```
