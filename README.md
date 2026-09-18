@@ -40,7 +40,7 @@ cd /tmp
 ```
 ### 4. Download the desired DVMEGA firmware file from the DVMEGA Downloads page linked above
 ```
-wget --tries=3 http://www.dvmega.nl/wpcontent/uploads/2018/11/DVMEGA_RH_V###_UNO.zip
+wget --tries=3 http://www.dvmega.nl/wp-content/uploads/2018/11/DVMEGA_RH_V###_UNO.zip
 ```
 ### 5. Unzip the firmware files to the dvmega directory
 ```
@@ -56,7 +56,7 @@ rm DVMEGA_RH_V###_UNO_JAPAN.hex
 ```
 ### 8. Download the firmware update script to the dvmega folder
 ```
-wget --tries=3 https://github.com/K9FRO/pistar-dvmega-firmware-updater/blob/master/flash_dvmega_gpio516.sh
+wget --tries=3 https://raw.githubusercontent.com/K9FRO/pistar-dvmega-firmware-updater/refs/heads/master/flash_dvmega_gpio516.sh
 ```
 ### 9. Make the script executable
 ```

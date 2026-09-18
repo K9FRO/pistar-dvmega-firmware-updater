@@ -127,7 +127,6 @@ echo 1 > "${GPIO_DIR}/value"
     -b 115200 \
     -F \
     -U "flash:w:${FIRMWARE}" \
-    -U "flash:v:${FIRMWARE}" \
     -v
 
 echo ""
