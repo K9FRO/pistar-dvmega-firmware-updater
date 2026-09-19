@@ -27,7 +27,7 @@ I hope this helps some others who had the same issue.
 
 <br>
 
-## Here are the revised steps to complete the firmware upgrade:
+## Here are the revised steps to complete the firmware upgrade to V3.26:
 
 ### USE AT YOUR OWN RISK!!!  I AM NOT RESPONSIBLE IF YOU BRICK YOUR DEVICE.
 
@@ -40,11 +40,11 @@ cd /tmp
 ```
 ### 4. Download the desired DVMEGA firmware file from the DVMEGA Downloads page linked above
 ```
-wget --tries=3 http://www.dvmega.nl/wp-content/uploads/2018/11/DVMEGA_RH_V###_UNO.zip
+wget --tries=3 http://www.dvmega.nl/wp-content/uploads/2018/11/DVMEGA_RH_V326_UNO.zip
 ```
 ### 5. Unzip the firmware files to the dvmega directory
 ```
-unzip -j -d dvmega DVMEGA_RH_V###_UNO.zip
+unzip -j -d dvmega DVMEGA_RH_V326_UNO.zip
 ```
 ### 6. Change directory to dvmega
 ```
@@ -52,7 +52,7 @@ cd dvmega/
 ```
 ### 7. Delete the unneeded .hex file (Japan)
 ```
-rm DVMEGA_RH_V###_UNO_JAPAN.hex
+rm DVMEGA_RH_V326_UNO_JAPAN.hex
 ```
 ### 8. Download the firmware update script to the dvmega folder
 ```
@@ -64,7 +64,7 @@ chmod +x flash_dvmega_gpio516.sh
 ```
 ### 10. Run the script
 ```
-sudo ./flash_dvmega_gpio516.sh DVMEGA_RH_V###_UNO.hex 
+sudo ./flash_dvmega_gpio516.sh DVMEGA_RH_V326_UNO.hex 
 ```
 ### 11. When the script is finished you should see:
 ```
