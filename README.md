@@ -2,34 +2,34 @@
 ## Script to update DVMega Firmware on Raspberry Pi
 
 ## Background
-I recently purchased second hand a Raspberry Pi 3B+ Rev 1.3 with a DVMEGA Raspberry Pi Singleband module for running Pi-Star.  The firmware on the DVMEGA was outdated and I wanted to update to the latest 3.26 version.
+I recently purchased a pre-built Pi-Star hotspot using a Raspberry Pi 3B+ Rev 1.3 with a DVMEGA Raspberry Pi Singleband module for running Pi-Star.  The firmware on the DVMEGA was outdated and I wanted to update to the latest 3.26 version.
 
 I came across these instructions written by KE0FHS that build upon contributions by ON4TOP & G0WFV, and adopted by MW0MWZ: [3 Pi Star Firmware Updates](https://fkarc.net/files/Amateur%20Radio%20Notes/3-Pi-Star_firmware_updates.pdf)
 
 The DVMEGA firmware is available here: [DVMEGA Downloads](https://www.dvmega.nl/Downloads/)
 
-Starting at 8b, I followed the procedure to add the jumper wire, download the files and ran the script, but the script kept returning this error:
+I followed the instructions, but the script kept returning this error:
 
 ```
 avrdude stk500_getsync() ... not in sync: resp=0x00
 avrdude main() error: unable to open programmer arduino on port /dev/ttyAMA0
 ```
 
-Troubleshooting the error with AI eventually led to discovering that the script was not actually triggering GPIO Pin 7.  
-Pi-Star's GPIO mapping is using legacy sysfs global GPIO numbering, which in this case should be GPIO516.
+Troubleshooting discovered that the script was not actually triggering GPIO Pin 7.  Pi-Star's GPIO mapping is using legacy sysfs global GPIO numbering, which in this case should be GPIO516.
 
-I vibe coded, and With edited commands, was able to successfully upgrade the firmware to V3.26.
+With edited commands, I was able to successfully upgrade the firmware to V3.26
 
+I devloped the flash_dvmega_gpio516.sh script to automate the revised update process, which includes some checks and safeguards before performing the actual firmware flash.
 
-### I hope the flash_dvmega_gpio516.sh script in this repo can help others who run into the same issue.
-### 73, de K9FRO
+I hope this helps some others who had the same issue.
 
+73, de K9FRO
 
 <br>
 
 ## Here are the revised steps to complete the firmware upgrade:
 
-### USE AT YOUR OWN RISK!!!
+### USE AT YOUR OWN RISK!!!  I AM NOT RESPONSIBLE IF YOU BRICK YOUR DEVICE.
 
 
 ### 1. For updating the DVMEGA firmware on a Raspberry Pi 3, solder a jumper wire between the ATMEGA reset pin and GPIO Header Pin 7.
